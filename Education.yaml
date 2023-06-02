@@ -1,0 +1,23 @@
+payload:
+  - DOMAIN-KEYWORD,edu
+  - DOMAIN-KEYWORD,cloudCourse
+  - DOMAIN-KEYWORD,cdn
+  - DOMAIN-KEYWORD,res
+  - DOMAIN-KEYWORD,vod2
+  - DOMAIN-KEYWORD,myqcloud
+  - DOMAIN-KEYWORD,pingjs
+  - DOMAIN-KEYWORD,ocsp2
+  - DOMAIN-KEYWORD,digicert
+  - DOMAIN-KEYWORD,lencr.org
+  - DOMAIN-KEYWORD,pingtas.qq.com
+  - DOMAIN-KEYWORD,qcloud
+  - DOMAIN-KEYWORD,edu.cn
+  - DOMAIN-KEYWORD,seyk
+  - DOMAIN-KEYWORD,ocsp
+  - DOMAIN-KEYWORD,mskzkt
+  - DOMAIN-KEYWORD,static.mskzkt.jse.edu.cn
+  - DOMAIN-SUFFIX,edu.cn
+  - DOMAIN-SUFFIX,imgcache.qq.com
+  - DOMAIN-SUFFIX,smartedu.cn
+  - IP-CIDR,192.168.7.0/24,no-resolve
+  - IP-CIDR,34.117.65.55/24
