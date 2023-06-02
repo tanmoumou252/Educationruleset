@@ -1,0 +1,61 @@
+port: 10808
+socks-port: 10809
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 0.0.0.0:1443
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16   # if you don't know what it is, don't change it
+  use-hosts: true                # lookup hosts and return IP record
+  nameserver:
+    - 223.5.5.5                  # 阿里DNS
+    - 223.6.6.6                  # 随便填写你喜欢的DNS
+  fallback:                      # concurrent request with nameserver, 
+    - 8.8.8.8                    # google
+    - 1.1.1.1                    # cloudflare
+  fallback-filter: 
+    geoip: true                  # default    
+    ipcidr:                      # ips in these subnets will be considered polluted
+      - 240.0.0.0/4
+
+proxy-groups:
+
+  - name: 🚀直接连接
+    type: select
+    proxies:
+      - DIRECT
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - REJECT
+
+rule-providers:
+
+  Education:
+    type: file
+    behavior: classical
+    path: ./RuleSet/Education.yaml
+
+  Lan:
+    type: file
+    behavior: classical
+    path: ./RuleSet/Lan.yaml
+
+  Direct:
+    type: file
+    behavior: classical
+    path: ./RuleSet/Direct.yaml
+    
+
+
+
+# 分流规则
+rules:
+  - RULE-SET,Education,🚀直接连接  
+  - RULE-SET,Lan,DIRECT
+  - RULE-SET,Direct,DIRECT
+  - MATCH,🐟 漏网之鱼
