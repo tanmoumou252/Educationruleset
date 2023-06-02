@@ -1,0 +1,9 @@
+# Hope's DirectList
+payload:
+  - DOMAIN-KEYWORD,v6
+  - DOMAIN-KEYWORD,euserv
+  - DOMAIN-SUFFIX,hope140.cc
+  - DOMAIN-SUFFIX,api.hope140.cc
+  - DOMAIN-SUFFIX,api.hope140.ga
+  - DOMAIN-KEYWORD,edu.cn
+  - IP-CIDR,192.168.7.0/24,no-resolve
